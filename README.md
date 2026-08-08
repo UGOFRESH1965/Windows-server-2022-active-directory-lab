@@ -76,7 +76,46 @@ You are selecting Custom: Install Microsoft Server Operating System only (advanc
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b6a0863c-5b78-4815-93df-5ee85f86c187" />
 
-<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/05cd03c3-62ee-4064-aa7c-b3a32a16d6a1" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/05cd03c3-62ee-4064-aa7c-b3a32a16d6a1" />
 
 You are setting a password for the built-in local Administrator account and clicking Finish to finalize the Windows Server 2022 setup.
 
+<img width="1919" height="1005" alt="Screenshot 2026-08-08 171757" src="https://github.com/user-attachments/assets/1e90e554-5688-44c7-be6d-cb70f3a5b99a" />
+
+You are sending Ctrl+Alt+Del to the virtual machine to open the login screen without triggering your physical computer's Lock screen.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3219d4dd-5133-4b8d-abc9-093a9c63d542" />
+
+You are logging in to the Windows Server 2022 desktop for the first time using the local Administrator account password you just created.
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 172154" src="https://github.com/user-attachments/assets/e12c14ea-656f-413b-836f-5f65c15ca3a6" />
+
+You are clicking Yes on the Networks prompt to enable network discovery so the server can see and communicate with other devices on the private virtual network.
+
+⚙️ Step 2: Basic Server Configuration & Hostname Setup
+
+Before installing Active Directory roles and features, configure the initial system parameters:
+1. **System Renaming:**
+   - Press **`Win + I`** to open the **Settings** menu.
+   - Click on System
+  
+   <img width="500" height="300" alt="Screenshot 2026-08-08 173223" src="https://github.com/user-attachments/assets/62cde604-41bd-48a6-96e9-79f9ff25f483" />
+   
+   - Navigate to About
+   - Click on "Rename this PC"
+     
+   <img width="500" height="300" alt="Screenshot 2026-08-08 173411" src="https://github.com/user-attachments/assets/751ce115-a8c1-4cb1-806c-b3b56543c29b" />
+
+   - Change the computer name to **`DC-01`** (Domain Controller 01).
+
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f47f2cb7-07c1-4556-adc1-32123f9b8189" />
+
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b5a94b3f-758c-4362-8fd2-0123c232546a" />
+
+   Click on Restart later
+
+   <img width="500" height="300" alt="Screenshot 2026-08-08 173923" src="https://github.com/user-attachments/assets/5813f31a-3bad-4fb8-b6d1-75e82b3df135" />
+
+   <img width="500" height="300" alt="Screenshot 2026-08-08 175231" src="https://github.com/user-attachments/assets/d52cdf2a-3837-4a43-953b-3a9b735eddef" />
+
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c0999224-2a17-49fa-a438-082c9eb90364" />
