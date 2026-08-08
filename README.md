@@ -75,3 +75,8 @@ You are selecting Custom: Install Microsoft Server Operating System only (advanc
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8e54a690-2e9d-4a56-bb41-b1b9d71d8bb4" />
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b6a0863c-5b78-4815-93df-5ee85f86c187" />
+
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/05cd03c3-62ee-4064-aa7c-b3a32a16d6a1" />
+
+You are setting a password for the built-in local Administrator account and clicking Finish to finalize the Windows Server 2022 setup.
+
