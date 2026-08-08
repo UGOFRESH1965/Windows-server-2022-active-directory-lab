@@ -1,4 +1,4 @@
-Windows-Active-Directory
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/390b4de0-9b94-4358-9993-d3dff72fb7ab" />Windows-Active-Directory
 
 A step-by-step guide documenting the deployment of a Windows Server 2022 Domain Controller using VMware Workstation. This walkthrough details VM provisioning, OS setup, network configuration, and successfully integrating a Windows 10 client machine into the domain.
 
@@ -119,3 +119,216 @@ Before installing Active Directory roles and features, configure the initial sys
    <img width="500" height="300" alt="Screenshot 2026-08-08 175231" src="https://github.com/user-attachments/assets/d52cdf2a-3837-4a43-953b-3a9b735eddef" />
 
    <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c0999224-2a17-49fa-a438-082c9eb90364" />
+
+   <img width="500" height="300" alt="Screenshot 2026-08-08 184404" src="https://github.com/user-attachments/assets/e197871b-8b59-4966-910a-288d7852f078" />
+
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/447ddd98-3f3d-4988-944c-f83c6fcc2929" />
+
+   To restart Windows Server for all changes we have made to reflect
+   -Run Command prompt as administrator
+   
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2f8d1340-850f-43f1-aac2-086170c2cf82" />
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 185703" src="https://github.com/user-attachments/assets/bee5967e-8ec0-46b6-89b4-c52f9c9db2e1" />
+
+We are sending Ctrl+Alt+Del to unlock the newly restarted Windows Server 2022 virtual machine and access the login screen.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/402294ee-741e-4a9b-9b22-8d2648ff1ba0" />
+
+We are entering the Administrator password to log back into the server after rebooting it.
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 190301" src="https://github.com/user-attachments/assets/792b5a2f-bef6-4648-821c-e380f9ee6c6a" />
+
+We are opening the network settings from the system tray to configure your network adapters and set a static IP for your internal interface (LAN).
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 190555" src="https://github.com/user-attachments/assets/54237808-158f-4dca-a840-272c66271f11" />
+
+We are clicking Network & Internet settings to open the Network Connections menu where you will rename your network adapters (Internet and Internal) and configure the static IP address.
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 190818" src="https://github.com/user-attachments/assets/cf25c3f1-e901-4e81-937f-e8670207d7f4" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/54e8541d-0b7a-4b07-a2c5-43f03a7ef142" />
+
+We are renaming **Ethernet0** to **Internet** (WAN) and **Ethernet1** to **Internal** (LAN), then configuring a static IP address (`172.16.7.1`) on the Internal adapter.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/19b06c37-e341-4888-aeb4-742410688833" />
+
+We are selecting Properties on the Internal (LAN) adapter to configure its static IPv4 settings (172.16.7.1)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8241162a-ec7d-4d82-b40e-9a5fb45f6729" />
+
+We are selecting Internet Protocol Version 4 (TCP/IPv4) and clicking Properties to manually assign your static IP address (172.16.7.1), Subnet Mask (255.255.255.0), Default Gateway (172.16.7.1), and Preferred DNS (127.0.0.1)
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 191821" src="https://github.com/user-attachments/assets/ecb77754-8d27-4f6b-95bf-bd7c0a5e47c7" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/08c6315f-ca96-41e2-8b1c-7ffe5c0cb49b" />
+
+We are entering the static network settings for the Internal (LAN) interface (172.16.7.1, subnet mask 255.255.255.0, gateway 172.16.7.1, and DNS 127.0.0.1) and clicking OK to apply them.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/fcd62a44-ab2c-4cd0-b73b-b4106551bd40" />
+
+We are reviewing the Network Connection Details to confirm that the static IP address (172.16.7.1) and subnet mask (255.255.255.0) have been successfully applied to the Internal (LAN) interface
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b876bfe9-35ec-46f3-a2f5-24e37d43f405" />
+
+We are opening the Command Prompt to verify your network connectivity and IP configuration using commands like ipconfig 
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/da654fab-e225-482e-9ad5-0d669c9e032d" />
+
+We are running ipconfig to verify that both network adapters display their assigned configurations: Internet (WAN) with dynamic IP 172.16.103.115 and Internal (LAN) with static IP 172.16.7.1
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/13031727-af06-467c-bc1f-7acadaafabe3" />
+
+We are testing internet connectivity and DNS resolution by running ping google.com to confirm that the server can successfully reach external networks through the WAN interface.
+
+<img width="500" height="300" alt="Screenshot 2026-08-08 193353" src="https://github.com/user-attachments/assets/5ffee549-f76c-4562-a344-cba988a3b22d" />
+
+We are clicking Add Roles and Features in Server Manager to begin installing server roles such as Active Directory Domain Services (AD DS) or Remote Access/NAT.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e746bcf0-77b0-4af6-b75a-826bc5db7c00" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d16f2617-a981-4ded-b2ad-b560b2b60c6c" />
+
+We are selecting Role-based or feature-based installation and clicking Next to install specific roles directly on this server.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f0c182a8-34d6-4ef9-a28f-33b609c9f519" />
+
+We are selecting your local server (DC-01) from the server pool and clicking Next to confirm it as the destination target for installation
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bb2e45f2-b633-455b-a08f-b0b5fbfc4ef5" />
+
+You are clicking Add Features on the pop-up prompt to include the necessary administration tools (Group Policy Management, Active Directory PowerShell module, Administrative Center, and Snap-Ins) required for Active Directory Domain Services.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/0543bc3c-e228-4149-b31b-abde887ee273" />
+
+You are clicking Next on the Features page to accept the default selected features (including Group Policy Management, which was automatically added with AD DS) and move to the AD DS summary section.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8ed6481b-db41-4d29-88ce-f792cdfa05ba" />
+
+You are clicking Next on the AD DS overview screen to move to the confirmation page and complete the installation of the Active Directory Domain Services role.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/67b8e37f-a56e-4e09-8b1f-2e996a590791" />
+
+You are clicking Install to start installing Active Directory Domain Services and its associated administration tools on DC-01.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f1725cd3-57eb-4576-a27d-3018bdfa95a6" />
+
+We are clicking Promote this server to a domain controller to launch the Active Directory Domain Services Configuration Wizard and set up your new Active Directory forest.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/08775fa6-7423-469c-9492-132c77e87f53" />
+
+We are selecting Add a new forest, specifying ugo.local as the Root domain name, and clicking Next to proceed with setting up the new Active Directory forest
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ba6e9094-6e99-49c7-919c-512edf3b0d7a" />
+
+We are entering and confirming the Directory Services Restore Mode (DSRM) password, leaving the functional levels set to Windows Server 2016 and keeping DNS Server and Global Catalog checked, then clicking Next.
+NOTE: The password should not be the same as the password used initially
+The DSRM password is only used in emergency recovery situations when booting into safe mode to repair or restore Active Directory database files. It is completely separate from standard domain user and administrator credentials.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5cbdb903-2321-4562-9996-07112510fa9a" />
+
+We are clicking Next on the DNS Options page, safely ignoring the yellow warning message about DNS delegation.
+
+This warning appears because we are setting up a brand-new root domain (ugo.local) in an isolated environment, so there is no higher-level parent DNS zone to delegate from. Leave Create DNS delegation unchecked and proceed.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1555ee36-30a8-4a34-b04e-4b4d3904e37b" />
+
+We are verifying the auto-generated NetBIOS domain name (UGO) and clicking Next to proceed to the database paths page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/46649a8a-120b-4872-bf70-26cf7ee9ffc4" />
+
+We are clicking Next on the Paths page to accept the default locations for the AD DS database (C:\Windows\NTDS), log files (C:\Windows\NTDS), and SYSVOL folder (C:\Windows\SYSVOL).
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ec5ffda7-6c81-41ae-84a5-094368576b01" />
+
+We are reviewing your domain configuration settings—confirming the creation of the new forest ugo.local, NetBIOS name UGO, and functional levels—and clicking Next to run the prerequisite check.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7ca4eaf3-827a-4d00-b692-109fe6ee0630" />
+
+We are clicking Install after seeing that all prerequisite checks passed successfully, which will promote DC-01 to a Domain Controller and automatically reboot the system when complete.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/426e9eb6-9b71-45f7-a6d3-6b4bc2aebb0f" />
+
+We are clicking Send Ctrl+Alt+Del in the VMware menu to unlock the Windows Server lock screen after its automatic reboot following the Domain Controller promotion.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b8827b5e-9e96-4c30-8005-4e803b05ba77" />
+
+We are entering your password to log in as UGO\Administrator, confirming that DC-01 has successfully promoted to a Domain Controller for the UGO domain
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7f8bd72e-8893-4cf3-820d-7f60950824f2" />
+
+We are opening Active Directory Users and Computers from the Server Manager Tools menu to begin managing domain objects such as users, groups, and organizational units (OUs) for ugo.local
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/04c8edb3-1086-4a38-8ac1-8229f47c30b7" />
+
+We are right-clicking on our domain name (ugo.local) to open its context menu, where you can select New to create organizational units (OUs), users, groups, or other Active Directory objects
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/41afc93b-9c8b-413e-884c-b94c453a2e89" />
+
+We are selecting Organizational Unit under the New sub-menu to create a new OU for organizing your domain's users, groups, or computers.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/32b0f1b9-cd13-46e4-a088-55eacbd2772f" />
+
+We are entering Admins as the Organizational Unit name and clicking OK to create the new OU within ugo.local
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2e45e049-3eef-40b4-9d42-911a2fe6a0f1" />
+
+We are selecting User under the New sub-menu to create a new domain user account inside the Admins Organizational Unit.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/45e684f2-48fc-4a4e-a65e-13e86c1fbc0f" />
+
+We are filling in the user details for Ugochukwu Ugochukwu (with logon name uugochukwu@ugo.local) and clicking Next to proceed to setting the account password.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e658f4c8-f26a-494e-9c13-ab4bcd005882" />
+
+We are setting and confirming the password for the new user, keeping User must change password at next logon checked, and clicking Next to move to the account creation summary.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5157ba72-2a3a-4be0-81fe-74bed9ca5995" />
+
+bWe are clicking Finish to complete the creation of the domain user account Ugochukwu Ugochukwu (uugochukwu@ugo.local) inside the Admins Organizational Unit.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9caf8fde-23a6-4206-b792-bba09626433b" />
+
+We are selecting Add to a group... from the context menu to assign security groups (such as Domain Admins) to the user account Ugochukwu Ugochukwu.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/941323e4-dec7-4945-8549-0e5a07a85461" />
+
+Click on Advanced
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/4ad1e2aa-4ecc-491a-ba24-a04a983a328c" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/aa586003-4308-4458-a134-c624ff810ed7" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9706e320-65eb-4960-a79b-c118783ad9fa" />
+
+Scroll down in the search results list, select Domain Admins (located in ugo.local/Users), and click OK to add the user to the group
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/cdb95883-c4c3-4da3-928d-13bf4e4f6242" />
+
+We are clicking OK on the Select Groups dialog to finish adding Ugochukwu Ugochukwu to the Domain Admins group.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c7405790-91ba-4093-92df-cbe1917e2141" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/10b43c75-7fff-4797-bab4-aab9515c557e" />
+
+We are accessing the VMware Workstation VM menu (or clicking Send Ctrl+Alt+Del), to switch user to test logging into the domain with your newly created user account (UGO\uugochukwu)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/cbf732e2-06fa-4bca-8662-6c9547ff0f40" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/10b43c75-7fff-4797-bab4-aab9515c557e" />
+
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/51d1819d-1baf-4ff3-bd47-4c9f4967f22b" />
+
+We are logging in as uugochukwu@ugo.local under Other user to authenticate with your newly created domain account for the first time.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8d948bea-7ab0-44d2-bd06-1c5bcea65d29" />
+
+We are clicking OK on the prompt stating "The user's password must be changed before signing in," which was triggered by the option we enabled during account creation.
+
+Next, we will be prompted to enter a new password and confirm it to complete the sign-in process.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/fd7f6d13-cffc-48ad-9c44-c6f97d1091c9" />
+
+We are entering your old password followed by a new password and password confirmation for uugochukwu@ugo.local.
+
+Click the arrow button (or press Enter) to update the password and log into the domain desktop for the first time.
