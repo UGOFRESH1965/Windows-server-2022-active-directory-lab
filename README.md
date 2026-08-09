@@ -547,3 +547,94 @@ Click Organizational Unit to open the creation dialog, where we can enter a name
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2c1d489f-29e8-4128-b9f2-b5112506e934" />
 
+We are on the New Object - Organizational Unit dialog with the name set to Ugo Company LTD.
+Leave Protect container from accidental deletion checked.
+Click OK to create the new Organizational Unit under ugo.local
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3af115f0-2871-48a2-b333-1505fface6a8" />
+
+We are right-clicking the newly created Ugo Company LTD OU and selecting New > Organizational Unit.
+Click Organizational Unit to create a sub-OU under Ugo Company LTD (such as IT, HR, Sales, or Users) to further structure our Active Directory hierarchy
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3ecb6b60-b9e5-4845-8027-9362373189a1" />
+
+We are creating a new Organizational Unit named IT inside ugo.local/Ugo Company LTD.
+Keep Protect container from accidental deletion checked.
+Click OK to create the IT sub-OU.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8d480fea-e1aa-4666-ab87-e7b244db367f" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b582d33f-6f78-4b50-8932-ce8771965261" />
+
+We are creating another sub-OU named HR inside ugo.local/Ugo Company LTD.
+Keep Protect container from accidental deletion checked.
+Click OK to create the HR Organizational Unit
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/19d3e8a2-4c54-4686-9302-45ef510f72b7" />
+We are creating another sub-OU named Sales inside ugo.local/Ugo Company LTD.
+Keep Protect container from accidental deletion checked.
+Click OK to create the Sales Organizational Unit
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c65a1ade-98d7-4517-9497-2b4327d4f290" />
+
+We are right-clicking the IT Organizational Unit and selecting New > Group.
+Click Group to launch the creation dialog, where we can define a security or distribution group name (such as System Admin) and select its group scope and type.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1f86774b-9e35-426e-a453-808a25079b24" />
+
+We are on the New Object - Group dialog, creating a group named System Admin inside ugo.local/Ugo Company LTD/IT.
+Keep Group scope set to Universal if cross-forest/multi-domain access is required.
+Ensure Group type is set to Security.
+Click OK to create the new group.
+
+<img width="500" height="300" alt="Screenshot 2026-08-09 173503" src="https://github.com/user-attachments/assets/e777f55b-5091-436f-ab3f-377adecfc5db" />
+
+We are pointing at the Create a new user in the current container icon on the Active Directory toolbar (the icon showing a single person with a small starburst/sparkle).
+Click that toolbar icon (or right-click an empty area in the right pane and select New > User).
+Enter the user details (First Name, Last Name, User Logon Name).
+Click Next to set the initial password and account options, then click Finish to create the user inside the IT Organizational Unit.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3a9cf7d1-3b2b-4f90-a8c4-62645d3d2cdb" />
+
+We are on the New Object - User dialog creating the user account for Timi Lawal (tlawal@ugo.local) in the ugo.local/Ugo Company LTD/IT OU.
+Click Next > to proceed to the password configuration screen.
+Set a secure password for the user, configure password options (e.g., User must change password at next logon), and click Next >.
+Click Finish to complete the user creation wizard.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ac16c473-5d0d-4125-9900-9e35bc39f6f3" />
+
+We have updated the selection to Password never expires.
+Click Next > to proceed to the summary page.
+Review the user creation summary and click Finish to finalize creating the user account in the IT OU.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b8eaf17d-3c95-4b4b-b9e6-f60a45980e88" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/4f65226d-b998-4dec-a949-7e9de5f72ba1" />
+
+Click Add to a group... to open the group selection dialog.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/84221e27-5aa4-4963-ab00-70b329f7ecf4" />
+
+In the Enter the object names to select box, type System Admin.
+Click Check Names to resolve the name, then click OK.
+Click OK on the confirmation prompt stating that the add to group operation was successful
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/66ec2a77-2721-429f-a4e2-f14a96811dcb" />
+
+We are right-clicking the Sales Organizational Unit and selecting New > Group.
+Click Group to open the creation dialog.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/6ed72128-75ed-417a-8ff6-9cc9be6f870a" />
+
+Enter a group name for the Sales department (Managers).
+Ensure Group scope is set to Global and Group type is set to Distribution, then click OK.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/492bed13-7eb8-4eb2-ba80-6146eae03358" />
+
+Click that toolbar icon (or right-click an empty area in the right pane and select New > User).
+Enter the user details (First Name, Last Name, User Logon Name).
+Click Next to set the initial password and account options, then click Finish to create the user inside the Sales Organizational Unit.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/95694250-97ef-42a2-ac61-250f90d6738c" />
+
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/2f047d04-0e65-4773-a49c-e24c44e617c7" />
