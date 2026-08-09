@@ -405,7 +405,145 @@ Click Next to proceed, where you will select the public-facing network interface
 
 Click on Cancel
 
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/429a0f30-bec5-4fa1-8445-b303b3b0afca" />
+
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5195dac8-cbc0-4571-9561-dd616593be7c" />
 
-You are selecting Refresh after canceling or stepping out of the setup wizard to update the console status for DC-01 (local).
+We are selecting Refresh after canceling or stepping out of the setup wizard to update the console status for DC-01 (local).
 To restart and complete the NAT setup, right-click DC-01 (local) again and click Configure and Enable Routing and Remote Access.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/4ed60a90-7fc4-49ec-9f46-268f920a6b21" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/18de498e-6dab-4c9b-bb6c-92182864d93c" />
+
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/c234a261-6e01-44a6-a823-3992c2ded7c3" />
+
+Click Next > at the bottom of the wizard window to proceed with Internet (WAN) as your public NAT interface.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/11175e11-92d2-4966-adf1-68ffc987096f" />
+
+Click Finish to complete the Routing and Remote Access Server Setup Wizard. The RRAS service will start automatically, enabling Network Address Translation (NAT) on Internet (WAN) to provide outbound internet connectivity for your internal network clients.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7160e74e-8e55-4a84-b7d3-3dbcbb65a0b6" />
+
+We're all set! The green arrow on DC-01 (local) indicates that Routing and Remote Access (RRAS) is active and running with NAT enabled.
+
+To verify or view your NAT setup in detail:
+Expand IPv4 in the left tree menu.
+Click on NAT to manage your public/private interfaces, check active connections, or configure port forwarding rules.
+
+**The next thing we are configuring is DHCP Server**
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5dd87f3c-301a-4ca8-a8be-bd5e97e4fa52" />
+
+We are clicking Add Roles and Features under the Manage menu in Server Manager to start adding a new role or feature to your server.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bf1bb090-8cc0-4312-9cc0-16c1df9003f9" />
+
+Click on Next
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/84d6d7be-8e4b-4dd2-809c-5a4a94f9c768" />
+
+Click on Next again
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b709b7f7-0302-4b44-8c3c-9f296076bd0c" />
+
+We are on the Select destination server page with DC-01.ugo.local selected in the server pool.
+Click Next > to proceed to the Server Roles page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f1e2a21b-3a47-4a38-b565-f07d1c6e62f8" />
+
+Check the checkbox next to DHCP Server in the Roles list.
+A popup window will appear asking to add required management features—click Add Features, then click Next > to continue setting up the DHCP Server role.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a9fc2a20-f8c4-483f-be73-75e7ede37012" />
+
+We are on the Select features page. Since no extra features are required for DHCP Server beyond what was added automatically, click Next > to proceed to the DHCP Server introduction page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5654be23-b156-4427-8f23-f1115db33134" />
+
+Click Next again 
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1de4837b-52e4-4ade-8226-b256d0e4cec3" />
+
+Click Install at the bottom right of the wizard to begin installing the DHCP Server role along with its management tools on DC-01.ugo.local
+
+**We are going to be using this:
+IP RANGE: 172.16.7.100 - 200
+SUBNET MASK: 255.255.255.0
+DEFAULT GATEWAY: 172.16.7.1
+DNS SERVER: 172.16.7.1
+**
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b9940c83-bf29-4d55-bdac-cb6a06f44d41" />
+
+You are clicking DHCP under the Tools menu in Server Manager to open the DHCP MMC console.
+Once opened, you can create new IP address scopes, configure lease durations, and set up DHCP options (like gateway and DNS servers) for your network clients.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/99c796b0-f466-4c85-869d-fa907c66dbe8" />
+
+Click on Next
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a808e998-1908-42b6-b062-b7a3ba0caf24" />
+
+We are on the Scope Name page of the New Scope Wizard with the name set to 172.16.7.100 -200 and description My Local PC connection to Server.
+Click Next > to proceed to the IP Address Range screen, where you will enter the start IP address, end IP address, and subnet mask for this scope.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/277bf154-f4c0-44f9-9b5f-dc804a52c902" />
+
+We are on the IP Address Range page of the New Scope Wizard.
+Verify that your IP range (172.16.7.100 to 172.16.7.200) and subnet mask (255.255.255.0 / /24) are correct for our internal network.
+Click Next > to proceed to the Add Exclusions and Delay page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/04829083-bfe9-485e-98dc-3f51215d64d0" />
+
+We do not need exclusions, leave the fields blank and click Next > to proceed to Lease Duration.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/edb18f59-0a0a-4a77-b936-f98f193166a8" />
+
+Leave the default lease time set to 8 Days.
+Click Next > to move to the Configure DHCP Options page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f5a3b517-4449-4b6b-8e57-4e55842c45a8" />
+
+Ensure Yes, I want to configure these options now is selected.
+Click Next > to proceed to the Router (Default Gateway) configuration step.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/67d6ee56-4612-45f7-b95a-4ff6b0b7db74" />
+
+Click the Add button to move 172.16.7.1 into the list box below.
+Click Next > to proceed to the Domain Name and DNS Servers settings page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/905ad974-29ef-44c8-b13c-19d4370231e2" />
+
+We are on the Domain Name and DNS Servers page with our parent domain set to ugo.local and DNS server IP set to 172.16.7.1.
+Click Next > to proceed to the WINS Servers configuration screen.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bdd09379-7c70-4dab-90fc-88e10f814a6a" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f4455b1c-4bfc-47c2-ba4e-f38e059aec86" />
+
+Keep Yes, I want to activate this scope now selected so the server begins servicing DHCP requests immediately.
+Click Next > to proceed to the final completion screen, where you can click Finish to complete the wizard
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/874d2561-5b28-44ad-99ff-804cb2e18e93" />
+
+Click Authorize to authorize this DHCP server in Active Directory.
+
+Once clicked, right-click dc-01.ugo.local (or press F5) to refresh the view.
+The red down-arrow icons next to IPv4 and IPv6 will change to green checkmarks, indicating the DHCP server is authorized and active in the domain.
+
+**Now we are going to create users while logging in with the Domain Admin**
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b366c4f7-9108-4d68-bcce-09bf3ccd1551" />
+
+We are selecting Active Directory Users and Computers under the Tools menu in Server Manager.
+Clicking this will launch the dsa.msc console, where we can manage domain users, groups, organizational units (OUs), and computer accounts for ugo.local.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/331d68d1-9712-4bc4-96fa-9de505f0145b" />
+
+We are right-clicking ugo.local and selecting New > Organizational Unit.
+Click Organizational Unit to open the creation dialog, where we can enter a name for the new OU (such as "Employees" or "Departments") to help organize your domain accounts.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2c1d489f-29e8-4128-b9f2-b5112506e934" />
+
