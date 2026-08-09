@@ -1002,3 +1002,90 @@ Final steps:
 Enter the admin password
 Click OK
 Wait for confirmation 
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/58df3506-8236-46b0-b5be-a9f243970b3d" />
+
+Click on Active Directory Users and Computers (currently highlighted in blue under the Tools menu) to open the domain management console.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/89e5ff99-8fec-4238-bfcf-4d82d9b6f41f" />
+
+We are currently looking at the Computers default container in Active Directory Users and Computers, which contains a computer account named HQ.
+
+This is the default landing folder for computer accounts in Active Directory.
+
+When a machine (like HQ) joins the ugo.local domain, it automatically lands here. To apply company security policies to it, you must move it into an Organizational Unit (OU) under Ugo Company LTD.
+
+**Go back to Windows 11**
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f0f0b6ea-2a83-428c-a287-c064ef71f6b7" />
+
+Open Command prompt 
+Type ipconfig 
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5d3f7260-53aa-4fe6-8e08-fa323e58a5de" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d07bcdb9-2c34-46cd-9a7e-99a364a806af" />
+
+Our Windows 11 machine is properly connected to the local network and domain infrastructure.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c72a9380-2f97-4582-9e07-520ef3ca37d2" />
+
+The "whoami" command output confirms that you are successfully logged in as the domain user ugo\tbabalola
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9d1d3987-3591-430c-a86f-f376eebb59f4" />
+
+The "arp -a" command displays the ARP (Address Resolution Protocol) table, which maps IP addresses to physical MAC addresses on your local network segment
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/664720c6-a87c-4069-8d6d-c6087936ed7b" />
+
+The ping google.com output confirms active external internet connectivity and functional DNS resolution on your client machine.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/01c0825a-e2f5-4a79-a108-c982d13b3170" />
+
+The klist output displays the cached Kerberos tickets for the currently authenticated domain session (tbabalola @ UGO.LOCAL)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a7a44522-e431-4ebc-a565-eb3969eb0cf7" />
+
+The ipconfig /all command displays the full, detailed network configuration of your client workstation.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f6b51a09-2d6b-4435-aa41-651d3f8630b8" />
+
+The ping ugo.local output confirms that domain name resolution and basic ICMP reachability to your Active Directory Domain Controller are working properly.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3f580114-a7ac-4b9b-918c-449cc5c4863e" />
+
+The nslookup ugo.local output verifies DNS query resolution and reveals the underlying domain controller structure.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c21a7c7c-1beb-4cb6-a5ec-f4db83b320ee" />
+
+The net user /DOMAIN command lists all user accounts created across the ugo.local Active Directory domain (queried directly from domain controller \\DC-01.ugo.local)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1397c2c8-f256-4778-bd8f-ea6749f19da7" />
+
+The net user tbabalola /DOMAIN command displays the detailed Active Directory properties for the user tbabalola
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a216987b-daef-4ce1-a21f-c3953553d440" />
+
+Clicking Disable Account will immediately prevent the HQ computer object from authenticating with Active Directory (ugo.local).
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b48b831b-c03d-4526-a3ca-aa0cf93e846c" />
+
+Click Yes to confirm disabling the computer account.
+
+**Go back to Windows 11**
+
+Switch User
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/04c2a373-d8a6-466e-ba97-830618443cfb" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/16c648ff-57ae-4fe1-af33-9e2b13312a6f" />
+
+Press Enter (or click the arrow button next to the password field) to submit the login credentials for tbabalola.
+
+Because you disabled the HQ computer account on the domain controller in the previous step, Windows will attempt to authenticate with ugo.local and trigger the expected security error:
+
+"The trust relationship between this workstation and the primary domain failed."
+
+This confirms that disabling the computer account successfully blocks domain logons across the endpoint.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/3638587e-b6ea-45ee-b593-7963344aad74" />
