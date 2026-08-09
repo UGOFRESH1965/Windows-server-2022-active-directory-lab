@@ -954,7 +954,7 @@ Click Next > and Finish
 
 Click the **Logon Hours...** button
 
-<img width="1918" height="1012" alt="Screenshot 2026-08-09 212159" src="https://github.com/user-attachments/assets/ae563851-b802-41b6-80f1-f413b9becec7" />
+<img width="500" height="300" alt="Screenshot 2026-08-09 212159" src="https://github.com/user-attachments/assets/ae563851-b802-41b6-80f1-f413b9becec7" />
 
 Ensure only authorized hours are marked as **Logon Permitted** (indicated by blue blocks), then click **OK**.
 
@@ -964,4 +964,14 @@ Go back to properties > Click on Accounts
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7b71b875-482b-4641-a617-548c5944f984" />
  Click **Apply** to commit changes to Active Directory, followed by **OK**
 
+**Now Let's go back to our Windows 11 setup**
 
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b573cb20-f0df-4a13-afb2-dc4c7d74cea9" />
+
+We are setting up a local user account on a Windows 11 client machine during the initial Out-of-Box Experience (OOBE).
+
+Click Next to proceed.
+
+Enter a password for this local user account when prompted (or leave it blank for no password, though a password is recommended for lab environments).
+
+Complete the security questions or privacy settings prompts to reach the Windows desktop.
