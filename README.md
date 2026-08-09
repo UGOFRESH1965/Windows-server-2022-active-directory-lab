@@ -1,4 +1,4 @@
-<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/390b4de0-9b94-4358-9993-d3dff72fb7ab" />Windows-Active-Directory
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/cf566cdb-53aa-4448-ad79-56b6b13f48c4" /><img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/390b4de0-9b94-4358-9993-d3dff72fb7ab" />Windows-Active-Directory
 
 A step-by-step guide documenting the deployment of a Windows Server 2022 Domain Controller using VMware Workstation. This walkthrough details VM provisioning, OS setup, network configuration, and successfully integrating a Windows 10 client machine into the domain.
 
@@ -332,3 +332,80 @@ Next, we will be prompted to enter a new password and confirm it to complete the
 We are entering your old password followed by a new password and password confirmation for uugochukwu@ugo.local.
 
 Click the arrow button (or press Enter) to update the password and log into the domain desktop for the first time.
+
+<img width="500" height="300" alt="Screenshot 2026-08-09 151331" src="https://github.com/user-attachments/assets/6c856389-3a6e-4607-92aa-519d1fe3a32d" />
+
+We are clicking Add roles and features in the Server Manager dashboard to open the setup wizard for installing a new server role or feature on Windows Server 2022
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/4f2a12e2-44c1-403c-b4aa-5e792469d703" />
+
+We are clicking Next on the Before You Begin page of the Add Roles and Features Wizard to proceed to selecting the installation type for DC-01.ugo.local.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/860e1b3b-2a76-43fa-95c1-e64df3681405" />
+
+We are clicking Next on the Select installation type page to accept the default Role-based or feature-based installation option and move forward to selecting the target server.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/bfb6b040-37fb-4438-af0c-053ec44b3e35" />
+
+We are clicking Next on the Select destination server page with DC-01.ugo.local selected from the server pool to proceed to selecting server roles
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5de2bbd2-596c-4e44-97ed-7d2566362a75" />
+
+We have checked the Remote Access role and are ready to click Next to proceed to the Features selection page (or configure Remote Access sub-services)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a2c28730-b44f-40cc-8500-b4248e489eb3" />
+
+We are on the Select features step of the Add Roles and Features Wizard. Since no additional features are required for Remote Access beyond the default selections, click Next to proceed to the Remote Access configuration page
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5aab34b6-b45e-4c89-b7b0-16631bea47eb" />
+
+We are on the Remote Access overview page of the wizard. Click Next to proceed to the Role Services page, where you can select specific components like DirectAccess and VPN (RAS) or Routing.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e4c9aee0-4ffe-4661-be8f-ff2df0ebbb6b" />
+
+We are on the Select role services page for the Remote Access role.
+To proceed:
+Check the box for DirectAccess and VPN (RAS) (and/or Routing, depending on your lab requirements)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/cca0c64b-cd72-438c-ac3d-1379dd6785d6" />
+
+You are clicking Add Features on the popup to include the necessary management tools (like Web Server IIS and RSAT Remote Access Management Tools) for DirectAccess and VPN (RAS)
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/642fe25c-86aa-4589-92bf-eb8bc949593b" />
+
+We have selected both DirectAccess and VPN (RAS) and Routing under Role Services. Click Next to proceed through the Web Server Role (IIS) information pages and advance toward the final confirmation step.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e96929be-68d1-4b98-86ea-6524e957bb01" />
+
+We are on the Web Server Role (IIS) overview page, which is required as a dependency for Remote Access. Click Next to proceed to the IIS role services selection page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f55e8c2e-20ad-448c-b77e-1e32f490c5f6" />
+
+We are on the Select role services page for Web Server (IIS) with all default prerequisites selected. Click Next to proceed to the Confirmation screen and click Install to finish setting up Remote Access and IIS on DC-01.ugo.local
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/81cd922d-c606-48f3-aa65-8fb5b012c2d3" />
+
+We are on the Confirm installation selections page, reviewing the listed roles and features for DC-01.ugo.local (including DirectAccess, VPN, Routing, RSAT tools, and Web Server IIS).
+Click Install to start installing the selected roles and features on your server.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/429a0f30-bec5-4fa1-8445-b303b3b0afca" />
+
+We are clicking Routing and Remote Access under the Tools menu in Server Manager to open the management MMC snap-in so you can configure and enable RRAS (such as NAT, VPN, or LAN routing) on DC-01.ugo.local.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7e53081d-2375-4e54-bf91-06af8d76eeb9" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/4ed60a90-7fc4-49ec-9f46-268f920a6b21" />
+
+We are clicking Next on the welcome page of the Routing and Remote Access Server Setup Wizard to proceed to the configuration options page (where you can select NAT, Remote access/VPN, or Custom configuration).
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/18de498e-6dab-4c9b-bb6c-92182864d93c" />
+
+We are selecting Network address translation (NAT) on the Configuration page of the Routing and Remote Access Server Setup Wizard.
+Click Next to proceed, where you will select the public-facing network interface that connects to the internet to complete the NAT configuration.
+
+Click on Cancel
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5195dac8-cbc0-4571-9561-dd616593be7c" />
+
+You are selecting Refresh after canceling or stepping out of the setup wizard to update the console status for DC-01 (local).
+To restart and complete the NAT setup, right-click DC-01 (local) again and click Configure and Enable Routing and Remote Access.
