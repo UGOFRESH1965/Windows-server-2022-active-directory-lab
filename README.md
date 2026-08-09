@@ -975,3 +975,30 @@ Click Next to proceed.
 Enter a password for this local user account when prompted (or leave it blank for no password, though a password is recommended for lab environments).
 
 Complete the security questions or privacy settings prompts to reach the Windows desktop.
+
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/36d09452-f06e-43d3-a63d-3156e0fdb8a6" />
+Press Windows + I to open Settings
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/86675a5b-381e-4afb-ab35-5849be3e4014" />
+
+Click About
+Under Related settings, click:
+Advanced System settings (this opens "System Properties")
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/64001dc8-fccc-4435-a888-271e0a897bf7" />
+
+In the System Properties window:
+Go to the Computer Name tab
+Click Change
+Select Domain (not workgroup)
+
+Enter the domain name: ugo.local
+When prompted for credentials: 
+You must use a valid domain admin account format, for example:
+
+ugo.local\uugochukwu
+Final steps:
+Enter the admin password
+Click OK
+Wait for confirmation 
