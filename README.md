@@ -1,4 +1,4 @@
-<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/cf566cdb-53aa-4448-ad79-56b6b13f48c4" /><img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/390b4de0-9b94-4358-9993-d3dff72fb7ab" />Windows-Active-Directory
+<img width="1918" height="1009" alt="image" src="https://github.com/user-attachments/assets/dfdbdebf-a0ec-4d28-a856-f755958a4182" /><img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/cf566cdb-53aa-4448-ad79-56b6b13f48c4" /><img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/390b4de0-9b94-4358-9993-d3dff72fb7ab" />Windows-Active-Directory
 
 A step-by-step guide documenting the deployment of a Windows Server 2022 Domain Controller using VMware Workstation. This walkthrough details VM provisioning, OS setup, network configuration, and successfully integrating a Windows 10 client machine into the domain.
 
@@ -637,4 +637,274 @@ Click Next to set the initial password and account options, then click Finish to
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/95694250-97ef-42a2-ac61-250f90d6738c" />
 
-<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/2f047d04-0e65-4773-a49c-e24c44e617c7" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2f047d04-0e65-4773-a49c-e24c44e617c7" />
+
+We are right-clicking the IT Organizational Unit again to create a new Group.
+Click Group to open the creation dialog.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/27eaff18-3c4e-4fd2-a5d5-ddcae5014717" />
+
+Type the group name (IT Support).
+Ensure Group scope is Global and Group type is Security, then click OK.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ec946a64-670b-4d32-9245-5b1d7a1e92bc" />
+
+Click that toolbar icon (or right-click an empty area in the right pane and select New > User).
+Enter the user details (First Name, Last Name, User Logon Name).
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5f3f1b63-37ca-45f6-a2e8-bac7ad4073c5" />
+
+Click Next to set the initial password and account options, then click Finish to create the user inside the IT Organizational Unit.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b0d3d535-3c76-4b41-a73d-fe30960fad15" />
+
+We are adding Bode Williams to a group.
+Click Add to a group... from the context menu.
+
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/252d03a4-ede2-45bf-8a26-9b8a582b3eae" />
+
+In the selection prompt, type IT Support (or the desired group name).
+Click Check Names, then click OK.
+Click OK on the confirmation dialog to complete adding Bode Williams to the group.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2f8d0a9e-019e-4833-9bf0-95b704665da1" />
+
+We are right-clicking Ugo Company LTD and selecting Delegate Control... to launch the Delegation of Control Wizard.
+Click Delegate Control... to open the wizard.
+Click Next on the Welcome page.
+
+Click Add... to select the users or security groups (e.g., System Admin or IT Support) you want to give administrative permissions to.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ecc24b84-207e-4989-9474-b5e696d81c18" />
+
+Select the specific tasks to delegate (e.g., Create, delete, and manage user accounts or Reset user passwords), then click Next and Finish.
+
+We have selected Bode Williams (bwilliams@ugo.local) to receive delegated control.
+Click OK to confirm the selected user.
+Click Next > on the Users or Groups page.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f08a07f2-6c9b-48a5-a95a-fa0be9750101" />
+
+Select the tasks we want to delegate (such as Create, delete, and manage user accounts or Reset user passwords and force password change at next logon), then click Next >.
+Click Finish to complete delegating control to Bode Williams.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/edb46872-bed9-4348-85ec-8cacfc6676d4" />
+
+
+We are right-clicking Ugo Company LTD again to delegate control.
+Click Delegate Control... to launch the wizard.
+Click Next on the welcome page.
+Click Add..., type the group name (IT Support), click Check Names, and then click OK.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2e402806-05d6-4e4a-be94-4f3078b5dbfa" />
+
+Select the permissions to delegate (such as Create, delete, and manage user accounts), then click Next and Finish.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/8982efcd-dc20-4cff-8e41-e40b560382dc" />
+
+We have opened the VM menu in VMware Workstation.
+Click Send Ctrl+Alt+Del to access the Windows Server log screen or lock menu.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/183d92c1-7d1c-4c2b-927f-3eea74bc4047" />
+
+Select Switch User to switch accounts and test logons for your new users (bwilliams)
+
+**We are bringing in a client now**
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e167ceac-0b1c-4c1f-b2bd-747f659172ca" />
+
+Click on New Virtual Machine
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/20c0dd66-bab1-4edc-a465-4274c179b6cf" />
+
+<img width="500" height="300" alt="Screenshot 2026-08-09 185313" src="https://github.com/user-attachments/assets/bcf18344-132b-439b-b9db-45a8b6983500" />
+
+<img width="500" height="300" alt="Screenshot 2026-08-09 185643" src="https://github.com/user-attachments/assets/9ae6e435-1776-4225-bd11-d70f125ae1d0" />
+
+Click on Next
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/9e6c7a0c-3c30-4e2c-9ca8-da3a9122489b" />
+
+Click on Next
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b055c6dd-282d-4ee7-8e42-1e06f4271b3c" />
+
+Click on Next
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c312c083-7d07-4a34-9496-db3269f290bc" />
+
+We are configuring encryption for the virtual TPM required by Windows 11.
+Keep Only the files needed to support a virtual TPM selected (this provides better performance than encrypting the entire VM disk).
+Make sure you remember or save the encryption password you typed.
+Keep Remember the password for this virtual machine in Credential Manager checked so VMware won't ask for it every time we power on the VM.
+Click Next >.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c50b20fb-7ad5-4678-a81e-1f240fc0ad86" />
+
+We are on the Specify Disk Capacity step set to 64 GB.
+Leave Maximum disk size (GB) set to 64.0 (or increase it if you need additional storage).
+Choose your preferred disk storage format:
+
+Store virtual disk as a single file: Recommended for better disk performance.
+
+Split virtual disk into multiple files: Recommended if you plan to move this VM to another computer via USB drive.
+
+Click Next >.
+
+Click Finish on the summary page to create the Windows 11 virtual machine.
+
+<img width="500" height="300" alt="Screenshot 2026-08-09 190733" src="https://github.com/user-attachments/assets/a86fe7d7-9517-4da9-b795-c6246c770ed8" />
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/34b66bb5-dfd0-4bd2-8f58-736cb63d8bbd" />
+
+Click OK at the bottom of the Virtual Machine Settings window to save the network configuration (VMnet2).
+Click Power on this virtual machine (green play icon in VMware).
+Important: Click inside the black VM screen immediately as it turns on and press any key on your keyboard 
+
+<img width="500" height="300" alt="Screenshot 2026-08-09 191404" src="https://github.com/user-attachments/assets/8e95ff42-e891-4eba-a16b-c69b8e319169" />
+
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2574057f-6bb5-4709-be8d-26635cb2017a" />
+
+Click Next on the current screen (Language and regional settings).
+Click Install now.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1a9a8bdd-3cf9-4111-ad24-39114173c138" />
+
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/ad1be6b4-01c4-4b5d-9dac-fb5e28a197f2" />
+
+We are right-clicking the main Ugo Company LTD Organizational Unit and selecting New > User.
+Click User to open the user creation wizard.
+
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/26b1812d-5854-44ec-be0b-5adbdeb890c6" />
+
+Enter the user's details (First name, Last name, and User logon name).
+Click Next >, set the password and password options, then click Next > and Finish.
+
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7a31fc44-36db-4c6e-b4f3-7df775522ac9" />
+
+We are creating the user account for Malik Vuwa (mvuwa@ugo.local) directly inside ugo.local/Ugo Company LTD.
+Click Next >.
+Enter and confirm the password for Malik Vuwa.
+Select your password options, then click Next >.
+Click Finish to complete creating the user account.
+
+
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/a9116fc6-b92d-4983-88e9-a7eed94f37f0" />
+
+We are naming the new Organizational Unit Service Executives inside ugo.local/Ugo Company LTD.
+Keep Protect container from accidental deletion checked to prevent accidental deletion of the OU.
+Click OK to create the Service Executives OU.
+The new OU will now appear listed under Ugo Company LTD alongside IT, HR, and Sales.
+
+
+To move Malik Vuwa into the Service Executives Organizational Unit:
+In the left pane of Active Directory Users and Computers, click on the parent folder Ugo Company LTD to view its contents in the right pane.
+In the right pane, right-click on Malik Vuwa and select Move....
+In the Move dialog box, expand ugo.local > expand Ugo Company LTD.
+Click to select the Service Executives OU.
+Click OK.
+
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a5d1bb0e-27c8-46a2-8e16-267e2352d3eb" />
+
+Clicking Properties will open the detailed account properties window for Malik Vuwa.
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e6024722-9cb9-492a-90b6-a35171362e5a" />
+
+The Unlock account checkbox becomes active when a user is locked out after entering the wrong password too many times (based on your Active Directory Account Lockout Policy).
+
+When checked:
+
+It clears the lockout flag on the user's account (mvuwa), allowing them to attempt logging in again immediately without waiting for the automatic lockout duration timer to expire.
+
+Then click apply and Ok
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b43c223c-45f2-4f73-b042-9952759dd88a" />
+
+**To reset User's password:**
+Click Reset Password... (currently highlighted in blue).
+
+In the dialog box that pops up:
+
+Enter a New password and confirm it.
+
+Check User must change password at next logon if you want Malik to create their own password when logging in.
+
+Check Unlock the user's account if Malik was locked out.
+
+Click OK to apply the new password
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/e0775ae1-0f39-4fa3-be13-9d8504c9a6da" />
+
+The User must change password at next logon option forces the user to set a brand new password the moment they attempt to log into their computer.
+
+
+### 🔑 Password Reset & User Notification Process
+
+#### **1. Active Directory Password Reset Configuration**
+When resetting a domain user account's password in Active Directory Users and Computers (ADUC):
+
+* **Temporary Password Assignment:** A temporary default password (e.g., `passmein2$`) is generated for the initial login.
+* **Force Password Change at First Logon:** The option **"User must change password at next logon"** is checked.
+  * **Security & Compliance:** Forces the user to establish a private, non-shared password immediately upon authentication, ensuring administrators do not retain knowledge of active credentials.
+  * **Session Requirement:** If the target user is currently logged into a session, they must log off and authenticate again for the mandatory password prompt to take effect.
+
+ 
+
+**We can as well draft this and have it sent to Malik**
+---
+
+#### **2. Service Desk Notification Template**
+
+**Subject:** Action Required: Your Active Directory Password Reset Request
+
+Dear Malik,
+
+Kindly be informed that your password reset request has been processed.
+
+Please use the temporary default password below to log in. Upon your first successful authentication, the system will automatically prompt you to establish your own preferred password:
+
+* **Default Password:** `passmein2$`
+
+> **Security Note:** If you did not request a password reset, please notify the IT Service Desk immediately.
+
+Best regards,  
+**IT Service Desk**  
+*Ugo Company LTD*
+
+
+
+**### ⏳ Automated Account Offboarding: 6-Month Contract
+
+#### **Scenario Context**
+A 6-month temporary contractor, **Malik Vuwa**, has been onboarded into the **Service Executives** Organizational Unit (`ugo.local/Ugo Company LTD/Service Executives`) starting **August 9, 2026**. 
+
+To comply with identity lifecycle management policies and least privilege standards, IT administration must automate account termination exactly six months from start date (**February 9, 2027**).
+
+---
+
+#### **Administrative Implementation**
+1. **Target Account:** `mvuwa@ugo.local`
+2. **Configuration Path:** `Active Directory Users and Computers` ➔ `Ugo Company LTD` ➔ `Service Executives` ➔ `Malik Vuwa Properties` ➔ **Account** Tab.
+3. **Expiration Policy Applied:**
+   * Selected **Account expires: End of:**
+   * Set target date to **Tuesday, February 9, 2027** (6 months from creation date).
+   * Clicked **Apply** to save the rule to Active Directory, followed by **OK**.
+
+---
+
+#### **Technical & Security Impact**
+* **Automated Deactivation:** At **11:59:59 PM on February 9, 2027**, Active Directory automatically expires the account. Malik will be blocked from initiating new domain logons across workstations, VPNs, and internal network resources.
+* **Session & Kerberos Revocation:** Active sessions attempting to renew Kerberos service tickets after the 6-month threshold will fail, revoking access to domain shares even if desktop sessions remain open.
+* **Compliance Standard:** Eliminates "orphan" contractor accounts automatically without requiring manual IT intervention on the contract completion date.**
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/eded9480-d5fe-4438-8283-94f1a386d338" />
+Click on Properties > Accounts
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b07a276a-0eab-4d84-85d4-c43869b13dba" />
+
+
