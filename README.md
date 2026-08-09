@@ -908,3 +908,43 @@ Click on Properties > Accounts
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b07a276a-0eab-4d84-85d4-c43869b13dba" />
 
 
+
+### ⏱️ One-Day Guest / Vendor Access Offboarding
+
+#### **Scenario Context**
+An external consultant/auditor, **Toni Babalola**, was granted temporary domain access into the **Service Executives** Organizational Unit (`ugo.local/Ugo Company LTD/Service Executives`) to complete a critical single-day project on **August 9, 2026**.
+
+To enforce zero-trust security and strict identity lifecycle management, the IT department must guarantee that all system access terminates immediately at the conclusion of the business day.
+
+---
+
+#### **Administrative Implementation**
+1. **Target Account:** `tbabalola@ugo.local`
+2. **Configuration Path:** `Active Directory Users and Computers` ➔ `Ugo Company LTD` ➔ `Service Executives` ➔ `Toni Babalola Properties` ➔ **Account** Tab.
+3. **Expiration Policy Applied:**
+   * Selected **Account expires: End of:**
+   * Set target date to **Sunday, August 9, 2026** (Same-day expiration).
+   * Clicked **Apply** to commit changes to Active Directory, followed by **OK**.
+
+---
+
+#### **Technical & Security Impact**
+* **Strict Same-Day Lockout:** At **11:59:59 PM on August 9, 2026**, Active Directory automatically flags the account as expired. The user will be blocked from initiating any new logons or accessing company resources.
+* **Mitigation of Stale Credentials:** Prevents third-party/contractor credentials from lingering active in Active Directory beyond the authorized project window, eliminating the risk of unmonitored vendor accounts.
+* **Automated Compliance Enforcement:** Satisfies audit requirements for privileged and temporary access control without requiring manual IT intervention after business hours.
+  
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d89294d9-29f8-48f4-8237-ff913ab9ca26" />
+Let's create a new user
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5ab4b92d-8169-49e4-9556-fca942211f77" />
+
+Click Next >.
+
+Set and confirm the temporary password for Toni Babalola (passmein2$).
+Click Next > and Finish
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/faa87215-7faa-429b-91d2-19cbc0d8e657" />
+Go back to properties > Click on Accounts
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7b71b875-482b-4641-a617-548c5944f984" />
+
