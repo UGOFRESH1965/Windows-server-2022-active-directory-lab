@@ -909,30 +909,37 @@ Click on Properties > Accounts
 
 
 
-### ⏱️ One-Day Guest / Vendor Access Offboarding
+### ⏱️ Time-Restricted Guest Access & Same-Day Offboarding
 
 #### **Scenario Context**
-An external consultant/auditor, **Toni Babalola**, was granted temporary domain access into the **Service Executives** Organizational Unit (`ugo.local/Ugo Company LTD/Service Executives`) to complete a critical single-day project on **August 9, 2026**.
+An external consultant, **Toni Babalola**, requires temporary domain access in the **Service Executives** Organizational Unit (`ugo.local/Ugo Company LTD/Service Executives`) to conduct an audit on **Sunday, August 9, 2026**.
 
-To enforce zero-trust security and strict identity lifecycle management, the IT department must guarantee that all system access terminates immediately at the conclusion of the business day.
+To implement strict Zero-Trust boundaries, IT administration must enforce two critical access controls:
+1. **Logon Hours Enforcement:** Limit active system logons strictly to standard working hours (e.g., 8:00 AM – 5:00 PM) to prevent unauthorized off-hours authentication.
+2. **Same-Day Expiration:** Guarantee automatic account termination at midnight on the same day.
 
 ---
 
 #### **Administrative Implementation**
-1. **Target Account:** `tbabalola@ugo.local`
-2. **Configuration Path:** `Active Directory Users and Computers` ➔ `Ugo Company LTD` ➔ `Service Executives` ➔ `Toni Babalola Properties` ➔ **Account** Tab.
-3. **Expiration Policy Applied:**
-   * Selected **Account expires: End of:**
-   * Set target date to **Sunday, August 9, 2026** (Same-day expiration).
-   * Clicked **Apply** to commit changes to Active Directory, followed by **OK**.
+
+##### **Step 1: Configure Restricted Logon Hours**
+1. **Path:** `Active Directory Users and Computers` ➔ `Ugo Company LTD` ➔ `Service Executives` ➔ `Toni Babalola Properties` ➔ **Account** Tab.
+2. Click the **Logon Hours...** button.
+3. Highlight unauthorized hours (e.g., all hours outside 8:00 AM – 5:00 PM) and select **Logon Denied** (indicated by white blocks).
+4. Ensure only authorized hours are marked as **Logon Permitted** (indicated by blue blocks), then click **OK**.
+
+##### **Step 2: Configure Account Expiration**
+1. On the **Account** tab under **Account expires**, select **End of:**.
+2. Set the target date to **Sunday, August 9, 2026**.
+3. Click **Apply** to write the security settings to Active Directory, followed by **OK**.
 
 ---
 
 #### **Technical & Security Impact**
-* **Strict Same-Day Lockout:** At **11:59:59 PM on August 9, 2026**, Active Directory automatically flags the account as expired. The user will be blocked from initiating any new logons or accessing company resources.
-* **Mitigation of Stale Credentials:** Prevents third-party/contractor credentials from lingering active in Active Directory beyond the authorized project window, eliminating the risk of unmonitored vendor accounts.
-* **Automated Compliance Enforcement:** Satisfies audit requirements for privileged and temporary access control without requiring manual IT intervention after business hours.
-  
+* **Off-Hours Authentication Prevention:** If Toni attempts to authenticate outside the defined **Logon Hours** matrix, the Domain Controller will immediately reject the request with an authorization error (`Logon failure: user not allowed to log on to this computer`).
+* **Active Session Handling:** Depending on Group Policy settings (*"Network security: Force logoff when logon hours expire"*), existing sessions will either be forcefully disconnected or prevented from accessing network resources once logon hours end.
+* **Complete Same-Day Termination:** At **11:59:59 PM on August 9, 2026**, Active Directory permanently expires the account, ensuring no lingering access remains for subsequent days.
+
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d89294d9-29f8-48f4-8237-ff913ab9ca26" />
 Let's create a new user
 
@@ -942,9 +949,19 @@ Click Next >.
 
 Set and confirm the temporary password for Toni Babalola (passmein2$).
 Click Next > and Finish
+  
+<img width="500" height="300" alt="Screenshot 2026-08-09 211823" src="https://github.com/user-attachments/assets/0ee51431-81a1-4535-839c-25433c2d5fd9" />
+
+Click the **Logon Hours...** button
+
+<img width="1918" height="1012" alt="Screenshot 2026-08-09 212159" src="https://github.com/user-attachments/assets/ae563851-b802-41b6-80f1-f413b9becec7" />
+
+Ensure only authorized hours are marked as **Logon Permitted** (indicated by blue blocks), then click **OK**.
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/faa87215-7faa-429b-91d2-19cbc0d8e657" />
 Go back to properties > Click on Accounts
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7b71b875-482b-4641-a617-548c5944f984" />
+ Click **Apply** to commit changes to Active Directory, followed by **OK**
+
 
