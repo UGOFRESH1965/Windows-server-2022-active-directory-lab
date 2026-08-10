@@ -571,6 +571,7 @@ Keep Protect container from accidental deletion checked.
 Click OK to create the HR Organizational Unit
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/19d3e8a2-4c54-4686-9302-45ef510f72b7" />
+
 We are creating another sub-OU named Sales inside ugo.local/Ugo Company LTD.
 Keep Protect container from accidental deletion checked.
 Click OK to create the Sales Organizational Unit
@@ -903,6 +904,7 @@ To comply with identity lifecycle management policies and least privilege standa
 * **Compliance Standard:** Eliminates "orphan" contractor accounts automatically without requiring manual IT intervention on the contract completion date.**
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/eded9480-d5fe-4438-8283-94f1a386d338" />
+
 Click on Properties > Accounts
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b07a276a-0eab-4d84-85d4-c43869b13dba" />
@@ -941,6 +943,7 @@ To implement strict Zero-Trust boundaries, IT administration must enforce two cr
 * **Complete Same-Day Termination:** At **11:59:59 PM on August 9, 2026**, Active Directory permanently expires the account, ensuring no lingering access remains for subsequent days.
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d89294d9-29f8-48f4-8237-ff913ab9ca26" />
+
 Let's create a new user
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5ab4b92d-8169-49e4-9556-fca942211f77" />
@@ -959,9 +962,11 @@ Click the **Logon Hours...** button
 Ensure only authorized hours are marked as **Logon Permitted** (indicated by blue blocks), then click **OK**.
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/faa87215-7faa-429b-91d2-19cbc0d8e657" />
+
 Go back to properties > Click on Accounts
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7b71b875-482b-4641-a617-548c5944f984" />
+
  Click **Apply** to commit changes to Active Directory, followed by **OK**
 
 **Now Let's go back to our Windows 11 setup**
@@ -978,6 +983,7 @@ Complete the security questions or privacy settings prompts to reach the Windows
 
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/36d09452-f06e-43d3-a63d-3156e0fdb8a6" />
+
 Press Windows + I to open Settings
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/86675a5b-381e-4afb-ab35-5849be3e4014" />
