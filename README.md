@@ -1,12 +1,12 @@
-<img width="1918" height="1009" alt="image" src="https://github.com/user-attachments/assets/dfdbdebf-a0ec-4d28-a856-f755958a4182" /><img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/cf566cdb-53aa-4448-ad79-56b6b13f48c4" /><img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/390b4de0-9b94-4358-9993-d3dff72fb7ab" />Windows-Active-Directory
+Windows-Active-Directory
 
 A step-by-step guide documenting the deployment of a Windows Server 2022 Domain Controller using VMware Workstation. This walkthrough details VM provisioning, OS setup, network configuration, and successfully integrating a Windows 10 client machine into the domain.
 
 <img width="1918" height="1011" alt="Screenshot 2026-08-02 180651" src="https://github.com/user-attachments/assets/38ce11eb-c6e4-451a-ac1a-b1056d95d905" />
 
- We start by opening VMware Workstation and launching the wizard to create a new virtual machine.
+ We start by opening VMware Workstation and launching the wizard to create a new virtual machine.
 
- <img width="1919" height="1013" alt="Screenshot 2026-08-02 181420" src="https://github.com/user-attachments/assets/a0170558-e2eb-405d-b316-6420a65cec64" />
+ <img width="1919" height="1013" alt="Screenshot 2026-08-02 181420" src="https://github.com/user-attachments/assets/a0170558-e2eb-405d-b316-6420a65cec64" />
 
 <img width="500" height="300" alt="Screenshot 2026-08-02 182048" src="https://github.com/user-attachments/assets/63684b76-886b-485d-8f26-6a2d5aa1914e" />
 <img width="500" height="300" alt="Screenshot 2026-08-02 182733" src="https://github.com/user-attachments/assets/72f524f8-6970-4fc2-8725-54f5719ad2f0" />
@@ -96,38 +96,38 @@ You are clicking Yes on the Networks prompt to enable network discovery so the s
 
 Before installing Active Directory roles and features, configure the initial system parameters:
 1. **System Renaming:**
-   - Press **`Win + I`** to open the **Settings** menu.
-   - Click on System
-  
-   <img width="500" height="300" alt="Screenshot 2026-08-08 173223" src="https://github.com/user-attachments/assets/62cde604-41bd-48a6-96e9-79f9ff25f483" />
-   
-   - Navigate to About
-   - Click on "Rename this PC"
-     
-   <img width="500" height="300" alt="Screenshot 2026-08-08 173411" src="https://github.com/user-attachments/assets/751ce115-a8c1-4cb1-806c-b3b56543c29b" />
+   - Press **`Win + I`** to open the **Settings** menu.
+   - Click on System
+  
+   <img width="500" height="300" alt="Screenshot 2026-08-08 173223" src="https://github.com/user-attachments/assets/62cde604-41bd-48a6-96e9-79f9ff25f483" />
+   
+   - Navigate to About
+   - Click on "Rename this PC"
+     
+   <img width="500" height="300" alt="Screenshot 2026-08-08 173411" src="https://github.com/user-attachments/assets/751ce115-a8c1-4cb1-806c-b3b56543c29b" />
 
-   - Change the computer name to **`DC-01`** (Domain Controller 01).
+   - Change the computer name to **`DC-01`** (Domain Controller 01).
 
-   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f47f2cb7-07c1-4556-adc1-32123f9b8189" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f47f2cb7-07c1-4556-adc1-32123f9b8189" />
 
-   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b5a94b3f-758c-4362-8fd2-0123c232546a" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b5a94b3f-758c-4362-8fd2-0123c232546a" />
 
-   Click on Restart later
+   Click on Restart later
 
-   <img width="500" height="300" alt="Screenshot 2026-08-08 173923" src="https://github.com/user-attachments/assets/5813f31a-3bad-4fb8-b6d1-75e82b3df135" />
+   <img width="500" height="300" alt="Screenshot 2026-08-08 173923" src="https://github.com/user-attachments/assets/5813f31a-3bad-4fb8-b6d1-75e82b3df135" />
 
-   <img width="500" height="300" alt="Screenshot 2026-08-08 175231" src="https://github.com/user-attachments/assets/d52cdf2a-3837-4a43-953b-3a9b735eddef" />
+   <img width="500" height="300" alt="Screenshot 2026-08-08 175231" src="https://github.com/user-attachments/assets/d52cdf2a-3837-4a43-953b-3a9b735eddef" />
 
-   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c0999224-2a17-49fa-a438-082c9eb90364" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c0999224-2a17-49fa-a438-082c9eb90364" />
 
-   <img width="500" height="300" alt="Screenshot 2026-08-08 184404" src="https://github.com/user-attachments/assets/e197871b-8b59-4966-910a-288d7852f078" />
+   <img width="500" height="300" alt="Screenshot 2026-08-08 184404" src="https://github.com/user-attachments/assets/e197871b-8b59-4966-910a-288d7852f078" />
 
-   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/447ddd98-3f3d-4988-944c-f83c6fcc2929" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/447ddd98-3f3d-4988-944c-f83c6fcc2929" />
 
-   To restart Windows Server for all changes we have made to reflect
-   -Run Command prompt as administrator
-   
-   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2f8d1340-850f-43f1-aac2-086170c2cf82" />
+   To restart Windows Server for all changes we have made to reflect
+   -Run Command prompt as administrator
+   
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2f8d1340-850f-43f1-aac2-086170c2cf82" />
 
 <img width="500" height="300" alt="Screenshot 2026-08-08 185703" src="https://github.com/user-attachments/assets/bee5967e-8ec0-46b6-89b4-c52f9c9db2e1" />
 
@@ -171,7 +171,7 @@ We are reviewing the Network Connection Details to confirm that the static IP ad
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b876bfe9-35ec-46f3-a2f5-24e37d43f405" />
 
-We are opening the Command Prompt to verify your network connectivity and IP configuration using commands like ipconfig 
+We are opening the Command Prompt to verify your network connectivity and IP configuration using commands like ipconfig 
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/da654fab-e225-482e-9ad5-0d669c9e032d" />
 
@@ -462,7 +462,7 @@ We are on the Select features page. Since no extra features are required for DHC
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5654be23-b156-4427-8f23-f1115db33134" />
 
-Click Next again 
+Click Next again 
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1de4837b-52e4-4ade-8226-b256d0e4cec3" />
 
@@ -571,7 +571,6 @@ Keep Protect container from accidental deletion checked.
 Click OK to create the HR Organizational Unit
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/19d3e8a2-4c54-4686-9302-45ef510f72b7" />
-
 We are creating another sub-OU named Sales inside ugo.local/Ugo Company LTD.
 Keep Protect container from accidental deletion checked.
 Click OK to create the Sales Organizational Unit
@@ -662,7 +661,7 @@ Click Next to set the initial password and account options, then click Finish to
 We are adding Bode Williams to a group.
 Click Add to a group... from the context menu.
 
-<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/252d03a4-ede2-45bf-8a26-9b8a582b3eae" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/252d03a4-ede2-45bf-8a26-9b8a582b3eae" />
 
 In the selection prompt, type IT Support (or the desired group name).
 Click Check Names, then click OK.
@@ -760,7 +759,7 @@ Click Finish on the summary page to create the Windows 11 virtual machine.
 
 Click OK at the bottom of the Virtual Machine Settings window to save the network configuration (VMnet2).
 Click Power on this virtual machine (green play icon in VMware).
-Important: Click inside the black VM screen immediately as it turns on and press any key on your keyboard 
+Important: Click inside the black VM screen immediately as it turns on and press any key on your keyboard 
 
 <img width="500" height="300" alt="Screenshot 2026-08-09 191404" src="https://github.com/user-attachments/assets/8e95ff42-e891-4eba-a16b-c69b8e319169" />
 
@@ -851,10 +850,10 @@ When resetting a domain user account's password in Active Directory Users and Co
 
 * **Temporary Password Assignment:** A temporary default password (e.g., `passmein2$`) is generated for the initial login.
 * **Force Password Change at First Logon:** The option **"User must change password at next logon"** is checked.
-  * **Security & Compliance:** Forces the user to establish a private, non-shared password immediately upon authentication, ensuring administrators do not retain knowledge of active credentials.
-  * **Session Requirement:** If the target user is currently logged into a session, they must log off and authenticate again for the mandatory password prompt to take effect.
+  * **Security & Compliance:** Forces the user to establish a private, non-shared password immediately upon authentication, ensuring administrators do not retain knowledge of active credentials.
+  * **Session Requirement:** If the target user is currently logged into a session, they must log off and authenticate again for the mandatory password prompt to take effect.
 
- 
+ 
 
 **We can as well draft this and have it sent to Malik**
 ---
@@ -873,8 +872,8 @@ Please use the temporary default password below to log in. Upon your first succe
 
 > **Security Note:** If you did not request a password reset, please notify the IT Service Desk immediately.
 
-Best regards,  
-**IT Service Desk**  
+Best regards,  
+**IT Service Desk**  
 *Ugo Company LTD*
 
 
@@ -882,7 +881,7 @@ Best regards,
 **### ⏳ Automated Account Offboarding: 6-Month Contract
 
 #### **Scenario Context**
-A 6-month temporary contractor, **Malik Vuwa**, has been onboarded into the **Service Executives** Organizational Unit (`ugo.local/Ugo Company LTD/Service Executives`) starting **August 9, 2026**. 
+A 6-month temporary contractor, **Malik Vuwa**, has been onboarded into the **Service Executives** Organizational Unit (`ugo.local/Ugo Company LTD/Service Executives`) starting **August 9, 2026**. 
 
 To comply with identity lifecycle management policies and least privilege standards, IT administration must automate account termination exactly six months from start date (**February 9, 2027**).
 
@@ -892,9 +891,9 @@ To comply with identity lifecycle management policies and least privilege standa
 1. **Target Account:** `mvuwa@ugo.local`
 2. **Configuration Path:** `Active Directory Users and Computers` ➔ `Ugo Company LTD` ➔ `Service Executives` ➔ `Malik Vuwa Properties` ➔ **Account** Tab.
 3. **Expiration Policy Applied:**
-   * Selected **Account expires: End of:**
-   * Set target date to **Tuesday, February 9, 2027** (6 months from creation date).
-   * Clicked **Apply** to save the rule to Active Directory, followed by **OK**.
+   * Selected **Account expires: End of:**
+   * Set target date to **Tuesday, February 9, 2027** (6 months from creation date).
+   * Clicked **Apply** to save the rule to Active Directory, followed by **OK**.
 
 ---
 
@@ -904,7 +903,6 @@ To comply with identity lifecycle management policies and least privilege standa
 * **Compliance Standard:** Eliminates "orphan" contractor accounts automatically without requiring manual IT intervention on the contract completion date.**
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/eded9480-d5fe-4438-8283-94f1a386d338" />
-
 Click on Properties > Accounts
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b07a276a-0eab-4d84-85d4-c43869b13dba" />
@@ -943,7 +941,6 @@ To implement strict Zero-Trust boundaries, IT administration must enforce two cr
 * **Complete Same-Day Termination:** At **11:59:59 PM on August 9, 2026**, Active Directory permanently expires the account, ensuring no lingering access remains for subsequent days.
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/d89294d9-29f8-48f4-8237-ff913ab9ca26" />
-
 Let's create a new user
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5ab4b92d-8169-49e4-9556-fca942211f77" />
@@ -952,7 +949,7 @@ Click Next >.
 
 Set and confirm the temporary password for Toni Babalola (passmein2$).
 Click Next > and Finish
-  
+  
 <img width="500" height="300" alt="Screenshot 2026-08-09 211823" src="https://github.com/user-attachments/assets/0ee51431-81a1-4535-839c-25433c2d5fd9" />
 
 Click the **Logon Hours...** button
@@ -962,12 +959,10 @@ Click the **Logon Hours...** button
 Ensure only authorized hours are marked as **Logon Permitted** (indicated by blue blocks), then click **OK**.
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/faa87215-7faa-429b-91d2-19cbc0d8e657" />
-
 Go back to properties > Click on Accounts
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/7b71b875-482b-4641-a617-548c5944f984" />
-
- Click **Apply** to commit changes to Active Directory, followed by **OK**
+ Click **Apply** to commit changes to Active Directory, followed by **OK**
 
 **Now Let's go back to our Windows 11 setup**
 
@@ -983,7 +978,6 @@ Complete the security questions or privacy settings prompts to reach the Windows
 
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/36d09452-f06e-43d3-a63d-3156e0fdb8a6" />
-
 Press Windows + I to open Settings
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/86675a5b-381e-4afb-ab35-5849be3e4014" />
@@ -1000,14 +994,14 @@ Click Change
 Select Domain (not workgroup)
 
 Enter the domain name: ugo.local
-When prompted for credentials: 
+When prompted for credentials: 
 You must use a valid domain admin account format, for example:
 
 ugo.local\uugochukwu
 Final steps:
 Enter the admin password
 Click OK
-Wait for confirmation 
+Wait for confirmation 
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/58df3506-8236-46b0-b5be-a9f243970b3d" />
 
@@ -1025,8 +1019,8 @@ When a machine (like HQ) joins the ugo.local domain, it automatically lands here
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f0f0b6ea-2a83-428c-a287-c064ef71f6b7" />
 
-Open Command prompt 
-Type ipconfig 
+Open Command prompt 
+Type ipconfig 
 
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5d3f7260-53aa-4fe6-8e08-fa323e58a5de" />
 
