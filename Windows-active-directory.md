@@ -189,25 +189,25 @@ We are clicking Network & Internet settings to open the Network Connections menu
 
 ![Rename Network Adapters](https://github.com/user-attachments/assets/54e8541d-0b7a-4b07-a2c5-43f03a7ef142)
 
-We are renaming **Ethernet0** to **Internet** (WAN) and **Ethernet1** to **Internal** (LAN), then configuring a static IP address (`172.16.7.1`) on the Internal adapter.
+We are renaming **Ethernet0** to **Internet** (WAN) and **Ethernet1** to **Internal** (LAN), then configuring a static IP address (`172.16.x.x`) on the Internal adapter.
 
 ![Internal Adapter Context Menu](https://github.com/user-attachments/assets/19b06c37-e341-4888-aeb4-742410688833)
 
-We are selecting Properties on the Internal (LAN) adapter to configure its static IPv4 settings (172.16.7.1)
+We are selecting Properties on the Internal (LAN) adapter to configure its static IPv4 settings (172.16.x.x)
 
 ![Select IPv4 Properties](https://github.com/user-attachments/assets/8241162a-ec7d-4d82-b40e-9a5fb45f6729)
 
-We are selecting Internet Protocol Version 4 (TCP/IPv4) and clicking Properties to manually assign your static IP address (172.16.7.1), Subnet Mask (255.255.255.0), Default Gateway (172.16.7.1), and Preferred DNS (127.0.0.1)
+We are selecting Internet Protocol Version 4 (TCP/IPv4) and clicking Properties to manually assign your static IP address (172.16.x.x), Subnet Mask (255.255.255.0), Default Gateway (172.16.7.1), and Preferred DNS (127.0.x.x)
 
 ![IPv4 Config Window](https://github.com/user-attachments/assets/ecb77754-8d27-4f6b-95bf-bd7c0a5e47c7)
 
 ![Enter Static IP Details](https://github.com/user-attachments/assets/08c6315f-ca96-41e2-8b1c-7ffe5c0cb49b)
 
-We are entering the static network settings for the Internal (LAN) interface (172.16.7.1, subnet mask 255.255.255.0, gateway 172.16.7.1, and DNS 127.0.0.1) and clicking OK to apply them.
+We are entering the static network settings for the Internal (LAN) interface (172.16.x.x, subnet mask 255.255.255.0, gateway 172.16.7.1, and DNS 127.0.0.1) and clicking OK to apply them.
 
 ![Network Connection Details IP Verification](https://github.com/user-attachments/assets/fcd62a44-ab2c-4cd0-b73b-b4106551bd40)
 
-We are reviewing the Network Connection Details to confirm that the static IP address (172.16.7.1) and subnet mask (255.255.255.0) have been successfully applied to the Internal (LAN) interface
+We are reviewing the Network Connection Details to confirm that the static IP address (172.16.x.x) and subnet mask (255.255.255.0) have been successfully applied to the Internal (LAN) interface
 
 ![Open Command Prompt Test Connectivity](https://github.com/user-attachments/assets/b876bfe9-35ec-46f3-a2f5-24e37d43f405)
 
@@ -217,7 +217,7 @@ We are opening the Command Prompt to verify your network connectivity and IP con
 
 ![Command Prompt ipconfig Output](https://github.com/user-attachments/assets/da654fab-e225-482e-9ad5-0d669c9e032d)
 
-We are running ipconfig to verify that both network adapters display their assigned configurations: Internet (WAN) with dynamic IP 172.16.103.115 and Internal (LAN) with static IP 172.16.7.1
+We are running ipconfig to verify that both network adapters display their assigned configurations: Internet (WAN) with dynamic IP 172.16.103.115 and Internal (LAN) with static IP 172.16.x.x
 
 ![Command Prompt Ping Google Test](https://github.com/user-attachments/assets/13031727-af06-467c-bc1f-7acadaafabe3)
 
@@ -561,7 +561,7 @@ Click Next again
 Click Install at the bottom right of the wizard to begin installing the DHCP Server role along with its management tools on DC-01.ugo.local
 
 **We are going to be using this:
-IP RANGE: 172.16.7.100 - 200
+IP RANGE: 172.16.x.100 - 200
 SUBNET MASK: 255.255.255.0
 DEFAULT GATEWAY: 172.16.7.1
 DNS SERVER: 172.16.7.1
@@ -586,7 +586,7 @@ Click Next > to proceed to the IP Address Range screen, where you will enter the
 ![DHCP Enter IP Address Range](https://github.com/user-attachments/assets/277bf154-f4c0-44f9-9b5f-dc804a52c902)
 
 We are on the IP Address Range page of the New Scope Wizard.
-Verify that your IP range (172.16.7.100 to 172.16.7.200) and subnet mask (255.255.255.0 / /24) are correct for our internal network.
+Verify that your IP range (172.16.x.100 to 172.16.x.200) and subnet mask (255.255.255.0 / /24) are correct for our internal network.
 Click Next > to proceed to the Add Exclusions and Delay page.
 
 ![DHCP Add Exclusions Blank](https://github.com/user-attachments/assets/04829083-bfe9-485e-98dc-3f51215d64d0)
@@ -605,12 +605,12 @@ Click Next > to proceed to the Router (Default Gateway) configuration step.
 
 ![DHCP Add Router Default Gateway 172.16.7.1](https://github.com/user-attachments/assets/67d6ee56-4612-45f7-b95a-4ff6b0b7db74)
 
-Click the Add button to move 172.16.7.1 into the list box below.
+Click the Add button to move 172.16.x.x into the list box below.
 Click Next > to proceed to the Domain Name and DNS Servers settings page.
 
 ![DHCP Configure Domain Name and DNS Server](https://github.com/user-attachments/assets/905ad974-29ef-44c8-b13c-19d4370231e2)
 
-We are on the Domain Name and DNS Servers page with our parent domain set to ugo.local and DNS server IP set to 172.16.7.1.
+We are on the Domain Name and DNS Servers page with our parent domain set to ugo.local and DNS server IP set to 172.16.x.x.
 Click Next > to proceed to the WINS Servers configuration screen.
 
 ![DHCP WINS Servers Configuration](https://github.com/user-attachments/assets/bdd09379-7c70-4dab-90fc-88e10f814a6a)
