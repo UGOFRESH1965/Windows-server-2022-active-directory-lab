@@ -4,6 +4,45 @@ A step-by-step guide documenting the deployment of a Windows Server 2022 Domain 
 
 ---
 
+**Pre-deployment Tasks**
+
+---
+
+**VMware Workstation Pro**
+
+* Go to the [Broadcom Support Portal](https://support.broadcom.com/).
+* Click **Register** in the top right to create a free Basic User account (if you do not already have one) and complete the profile screening webform.
+* Log in and navigate to the **Free Downloads** section, or search directly for **VMware Workstation Pro**.
+* Select the version for your host OS (Windows or Linux).
+* Check the **Terms & Conditions** box to unlock the download button, then click **Download**.
+* Run the installer on your host system and select the option for **Personal Use** (no license key required) when prompted during setup.
+
+---
+
+**Windows Server 2022 ISO**
+
+* Navigate to the [Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2022).
+* Click **Download the ISO** under the evaluation options.
+* Fill out the brief registration form (Name, Email, Country—no payment details required) and click **Continue**.
+* Select your preferred language (e.g., *English*) and download the **64-bit Edition ISO**.
+* Save the `.iso` file to your local drive *(provides a 180-day evaluation period for Standard and Datacenter editions)*.
+
+---
+
+**Windows 11 ISO**
+
+* Go to Microsoft’s official [Download Windows 11](https://www.microsoft.com/software-download/windows11) page.
+* Scroll down to the **Download Windows 11 Disk Image (ISO) for x64 devices** section.
+* Select **Windows 11 (multi-edition ISO for x64 devices)** from the dropdown menu and click **Download Now**.
+* Under *Select the product language*, choose **English** (or your region) and click **Confirm**.
+* Click the **64-bit Download** button to start downloading the official ISO.
+
+---
+
+**Getting Started with the Active Directory Lab Setup/Deployment**
+
+---
+
 ## Step 1: Provisioning the Windows Server 2022 Virtual Machine
 
 **Step 1.1:** Open VMware Workstation and launch the wizard to create a new virtual machine.
