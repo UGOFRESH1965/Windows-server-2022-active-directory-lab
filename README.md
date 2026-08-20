@@ -1,7 +1,7 @@
 This project documents the step-by-step setup of a Windows Server 2022 virtual machine in VMware Workstation, configured as a Domain Controller. The walkthrough covers VM creation, OS installation, VMware Tools setup, network verification, and concludes with successfully joining a Windows 11 client to the domain.
 
 
-## 🛡️ Day 8: Enterprise GPO Hardening & Security Event Auditing
+## 🛡️ Enterprise GPO Hardening & Security Event Auditing
 
 ### 1. Account Lockout & Password Defense (DC-01)
 Configured an enterprise security baseline GPO linked to `Ugo Company LTD` enforcing an Account Lockout threshold of 5 attempts.
